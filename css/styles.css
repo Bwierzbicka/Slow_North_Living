@@ -1,0 +1,659 @@
+/* =========================
+         Variables
+   ========================= */
+
+:root {
+    --page-background-color: #f7f6f3;
+    --page-secondary-background-color: #f7f6f3;
+    --main-text-color: #2f2f2f;
+    --link-color: #4d270a;
+    --link-visited-color: #513195;
+    --link-active-color: rgb(147, 99, 55);
+    --separation-line: 2px solid rgb(230, 224, 224);
+}
+
+/* =========================
+      RESET / BASE STYLES
+   ========================= */
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  background-color: var(--page-background-color);
+  color: var(--main-text-color);
+  scroll-behavior: smooth;
+}
+
+/* LINKS */
+
+a {
+  text-decoration: none;
+}
+
+main a {
+  border-bottom: 1px dotted var(--main-text-color);
+  color: var(--link-color);
+}
+
+a:active {
+  color: var(--link-active-color);
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+/* IMG */ 
+
+img {
+  display: block;
+}
+
+
+/* =========================
+       TYPOGRAPHY
+   ========================= */
+
+header, footer, h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  font-size: 1.7rem;
+  font-weight: 200;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 150;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
+ul, ol {
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* =========================
+        COMPONENTS
+   ========================= */
+
+/***** Read more button *****/
+
+.read-more-btn {
+  font-size: 0.9em;
+}
+
+/**
+.read-more-btn {
+  background-color: rgb(230, 224, 224); 
+  padding: 8px 25px;
+  border-radius: 7px;
+}
+
+.read-more-btn:hover {
+  background-color: rgb(205, 199, 199);
+  transition-duration: 0.3s;
+} **/
+
+
+
+/* =========================
+     LAYOUT (MOBILE FIRST)
+   ========================= */
+
+main > :not(.hero) {
+  width: 90%;
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically centers items */
+}
+
+.site-header.separation-line {
+  border-bottom: var(--separation-line);
+}
+
+.site-title {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2.6rem;
+  text-shadow: 1px 1px 10px #c1bdbd;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.site-title a,
+.site-title a:visited {
+  color: var(--main-text-color);
+}
+
+.nav-head ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-head li{
+  display: inline; /* Puts nav items side-by-side */
+  text-align: center;
+  font-size: 1.2rem;
+  padding-inline: 30px;
+}
+
+.nav-head a {
+  color: var(--main-text-color);
+}
+
+.hero {
+  height: 400px; /* Define a height for the container */
+  overflow: hidden;
+  position: relative;
+}
+
+ /* DARK OVERLAY (READABILITY): This creates a transparent layer between image and text. 
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); 
+}*/
+
+.hero-img {
+  width: 100%;   /* Image takes the full width of the container */
+  height: 100%;  /* Image takes the full height of the container */
+  object-fit: cover; /* Scales and crops the image to fill the container */
+  object-position: center; /* Centers the focal point of the image (default) */
+}
+
+.hero-text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%); /* Offsets the element by half its own size */
+  background: rgba(255, 255, 255, 0.45);
+  padding: 1rem;
+  backdrop-filter: blur(2px);
+  text-align: center; 
+}
+
+/*****  Home Page ** Blog Page *****/
+
+.start-content {
+  text-align: center;
+  border-bottom: var(--separation-line); 
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+.featured-posts-container, 
+.blog-preview-container,
+.seasonal-care  {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/**
+.seasonal-care {
+  background-color: var(--page-secondary-background-color);
+  margin: 0 !important;
+  width: 100vw !important;
+  padding: 5vw;
+}**/
+
+.index-blog-preview,
+.blog-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 1s ease, box-shadow 0.3s ease;
+  background-color: white;
+  border: var(--separation-line);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.index-blog-preview:active, .blog-preview:active {
+  transform: scale(0.98);
+  box-shadow:  0 0 10px rgb(4, 4, 4);
+}
+
+.index-bp-img, .bp-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.index-blog-preview a,
+.index-blog-preview a:visited, 
+.blog-preview a,
+.blog-preview a:visited {
+  color: var(--main-text-color);
+}
+
+.index-blog-preview a:first-child,
+.blog-preview a:first-child {
+  border-bottom: none;   /** removes underline on the img **/
+}
+
+.index-bp-article h3,
+.bp-article h3 {
+  padding: 5px 0;
+  border-bottom: var(--separation-line); 
+}
+
+.index-bp-article p,
+.bp-article p {
+  margin-bottom: 5px;
+}
+
+/************ About ************/
+
+.main-about {
+  margin-top: 20px;
+}
+/************ Blog Post - articles ************/
+
+
+.article-img {
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+article h1 {
+  margin-top: 20px;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.house-plant-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.house-plant-img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.article-body-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.article-body-img.full-img {
+  height: auto;
+}
+
+
+/************* You might also like *************/
+
+.related-posts {
+  border-top: var(--separation-line);
+  margin-top: 30px;
+  padding: 30px 0;
+}
+
+.related-posts ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rp-link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: var(--separation-line);
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.related-posts li:last-child .rp-link {
+  border-bottom: none;
+}
+
+.rp-link img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rp-link:hover {
+  transform: translateX(4px);
+  transition: 0.2s ease;
+}
+
+/************ Footer ************/
+
+
+footer {
+  border-top: var(--separation-line); 
+  margin-top: 40px;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-icons {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-footer ul {
+  list-style: none; 
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.nav-footer li{
+  display: inline;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.nav-footer a {
+  color: var(--main-text-color);
+}
+
+.footer-text {
+  text-align: center;
+}
+
+
+/**
+footer {
+  border-top: var(--separation-line); 
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-footer ul {
+  list-style: none; 
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.nav-footer li{
+  display: inline;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.footer-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.footer-legal {
+  width: max(300px, 10vw);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.nav-footer a:any-link,
+.footer-legal a:any-link {
+  color: var(--main-text-color);
+}**/
+
+/* =========================
+        MEDIA QUERIES
+   Mobile → Tablet → Laptop
+   ========================= */
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (min-width: 768px) {
+
+main > :not(.hero) {
+  width: 95%;
+  margin-inline: auto;
+} 
+
+.site-header {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; /* Vertically centers items */
+}
+
+.site-title {
+  padding-left: 2rem;
+  margin-bottom: 0;
+}
+
+.nav-head ul {
+  margin-bottom: 0;
+}
+
+/*****  Home Page ** Blog Page *****/
+
+.featured-posts-container,
+.blog-preview-container,
+.seasonal-care {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+
+
+
+/************ About ************/
+
+/************ Blog Post - articles ************/
+
+.article-img {
+  margin-top: 0;
+  max-width: 250px;
+  height: auto;
+  float: left;
+  margin-right: 20px;
+}
+
+.house-plant-box {
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.house-plant-description {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: var(--separation-line);
+}
+
+.house-plant-description p:first-of-type,
+.house-plant-description > :last-child,
+.article-intro > :last-child  {
+  margin: 0;
+}
+
+.article-body-img {
+  height: auto;
+}
+
+/************* You might also like *************/
+
+/************ Footer ************/
+
+footer {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer-text {
+  margin-bottom: 0;
+  margin-inline: 2rem;
+}
+
+.nav-footer {
+  margin-bottom: 0;
+}
+
+
+/**
+.footer-container {
+  width: max(700px, 70vw);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}**/
+
+}
+
+
+/*******************************************************
+
+      Large devices (laptops/desktops, 992px and up)
+
+*********************************************************/
+
+@media (min-width: 992px) {
+
+main > :not(.hero) {
+  width: min(95%, 1300px);
+  margin-inline: auto;
+} 
+
+.site-title {
+  letter-spacing: 0.12em;
+}
+
+.nav-head ul {
+  margin-right: 3rem;
+}
+
+.nav-head li{
+  padding-inline: 50px;
+}
+
+.hero {
+  height: 500px;
+}
+
+.hero-text {
+  max-width: 550px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Offsets the element by half its own size */
+  padding-inline: 2rem;
+  border-radius: 10px;
+}
+
+/*****  Home Page ** Blog Page *****/
+
+.featured-posts-container {
+  margin-top: 40px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.seasonal-care {
+  margin-top: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap:50px;
+}
+
+.blog-preview-container {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.seasonal-care .index-bp-img {
+   min-width: 300px;
+}
+
+.index-blog-preview,
+.blog-preview {
+  transition: transform 1s ease, box-shadow 0.3s ease;
+}
+
+.index-blog-preview:hover, .blog-preview:hover {
+  transform: scale(0.98);
+  box-shadow:  0 0 10px rgb(4, 4, 4);
+}
+
+.index-blog-preview:active, .blog-preview:active {
+  transform: none;
+  box-shadow:  none;
+  padding: 0;
+}
+
+/************ About ************/
+
+.main-about {
+  max-width: 900px;
+  text-align: justify;
+}
+/************ Blog Post - articles ************/
+
+main > article {
+  max-width: 900px;
+  text-align: justify;
+}
+
+.article-img {
+  max-width: 300px;
+}
+
+
+/************* You might also like *************/
+
+/************ Footer ************/
+
+
+
+
+}

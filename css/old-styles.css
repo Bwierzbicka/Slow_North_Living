@@ -1,0 +1,382 @@
+
+:root {
+--page-background-color: #f7f6f3;
+--main-text-color: #2f2f2f;
+--link-active-color: rgb(147, 99, 55);
+--separation-line: 2px solid rgb(230, 224, 224);
+
+}
+
+html {
+  box-sizing: border-box; /* width = content + padding + border included */
+}
+
+*, ::before, ::after {
+  box-sizing: inherit; /* everything inherits it automatically */
+}
+
+body {
+  font-family: "Inter", Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: var(--page-background-color);
+  color: var(--main-text-color);
+}
+
+main {
+  width: min(90%, 1250px);
+  margin-inline: auto;
+}
+
+header, footer, h1, h2, h3, h4, h5 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 150;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 100;
+}
+
+h4 {
+  font-size: 1.0rem;
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+main a {
+  border-bottom: 1px dotted var(--main-text-color);
+}
+
+ a:active {
+  color: var(--link-active-color);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.site-header {
+  border-bottom: var(--separation-line); 
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; /* Vertically centers items */
+}
+
+.site-title {
+  font-family: "Antic Slab", serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 2.8rem;
+  letter-spacing: 0.12em;
+  text-align: center;
+  /*flex-grow: 1; /* Allows title to take up available space */
+  text-shadow: 2px 2px 5px #a29999;
+  margin-left: 120px;
+}
+
+.nav-head ul {
+  padding: 0;
+  margin-right: 120px;
+  list-style: none;
+  max-width: 500px;
+}
+
+.nav-head li{
+  display: inline; /* Puts nav items side-by-side */
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 50px;
+}
+
+.nav-head a {
+  color: var(--main-text-color);
+}
+
+.hero {
+  
+  margin-top:20px;
+  height: 500px; /* Define a height for the container */
+  overflow: hidden;
+  position: relative;
+}
+
+ /* DARK OVERLAY (READABILITY): This creates a transparent layer between image and text. 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25); 
+}*/
+
+.hero-img {
+  width: 100%;   /* Image takes the full width of the container */
+  height: 100%;  /* Image takes the full height of the container */
+  object-fit: cover; /* Scales and crops the image to fill the container */
+  object-position: center; /* Centers the focal point of the image (default) */
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Offsets the element by half its own size */
+  min-width: 550px;
+  background: rgba(255, 255, 255, 0.45);
+  padding: 0 1rem;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  text-align: center; 
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+}
+
+/** Home Page **/ 
+
+.start-content {
+  text-align: center;
+  border-bottom: var(--separation-line); 
+  padding: 20px 0;
+}
+
+.featured-posts-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.index-blog-preview {
+  flex: 1; /* This makes each item grow and share the available space equally */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.index-blog-preview a,
+.index-blog-preview a:visited, 
+.blog-preview a,
+.blog-preview a:visited {
+  color: var(--main-text-color);
+}
+
+.index-blog-preview a:first-child,
+.blog-preview a:first-child {
+  border-bottom: none;
+}
+
+.index-blog-preview:hover, .blog-preview:hover {
+  transform: transform 1s ease;
+  transform: scale(0.98);
+  box-shadow:  0 0 10px rgb(4, 4, 4);
+}
+
+.index-bp-img {
+  max-width: 200px;
+  display: block; /** remove white space after img **/
+}
+
+.index-bp-article h3 {
+  margin-bottom: 0;
+  padding-bottom: 15px;
+  border-bottom: var(--separation-line); 
+}
+
+.index-bp-article {
+  text-align: center;
+}
+
+.index-bp-article p {
+  margin-bottom: 0;
+}
+
+/** Blog page **/
+
+.blog-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-preview-container:after {
+  content:"";
+  width: 50%;
+}
+
+.blog-preview {
+  width: 49%;
+  display: flex;
+  padding: 5px;
+}
+
+.bp-img {
+  max-width: 200px;
+  display: block; /** remove white space after img **/
+}
+
+.bp-article {
+  margin: 0 20px;
+}
+
+.bp-article h3 {
+  margin: 0;
+  padding-bottom: 15px;
+  border-bottom: var(--separation-line); 
+}
+
+/***** Read more button *****/
+
+.read-more-btn {
+  font-size: 0.9em;
+  
+}
+/**
+.read-more-btn {
+  background-color: rgb(230, 224, 224); 
+  padding: 8px 25px;
+  border-radius: 7px;
+}
+
+.read-more-btn:hover {
+  background-color: rgb(205, 199, 199);
+  transition-duration: 0.3s;
+} **/
+
+/************ About ************/
+
+.main-about {
+  margin: 5vh 9vw;
+  text-align: justify;
+}
+
+/************ Blog Post - articles ************/
+article {
+  margin: 3vw 9vw;
+  text-align: justify;
+}
+
+article h1 {
+  text-align: left;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.article-img {
+  max-width: 300px;
+  height:auto;
+  float: left;
+  margin-right: 25px;
+}
+
+.house-plant-box {
+  display: flex;
+}
+
+.house-plant-img {
+  max-width: 250px;
+  max-height: 350px;
+}
+
+.house-plant-description {
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: var(--separation-line);
+}
+
+.house-plant-description p:first-of-type,
+.house-plant-description > :last-child,
+.article-intro > :last-child  {
+  margin: 0;
+}
+
+.article-body-img {
+  width: 100%;
+  height: auto;
+}
+
+/************* You might also like *************/
+
+.related-posts {
+  border-top: var(--separation-line);
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+/*related post link */
+.rp-link {  
+  display: flex;
+  align-items: center;
+  border-bottom: var(--separation-line);
+}
+
+.related-posts ul {
+  list-style-type: none;
+}
+
+.related-posts li {
+  margin: 0;
+}
+
+.related-posts img {
+  height: 80px;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/************ Footer ************/
+footer {
+  border-top: var(--separation-line); 
+  margin-top: 20px;
+  padding: 30px 0;
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.nav-footer ul {
+  padding: 0;
+  list-style: none; 
+}
+
+.nav-footer li{
+  display: inline; /* Puts nav items side-by-side */
+  text-align: center;
+  padding: 0 50px;
+}
+
+.nav-footer a {
+  text-decoration: none;
+  color: var(--main-text-color);
+}
+
+.nav-footer a:hover {
+  text-decoration: underline;
+}
