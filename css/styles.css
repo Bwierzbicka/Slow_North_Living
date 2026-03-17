@@ -109,25 +109,6 @@ ul, ol {
         COMPONENTS
    ========================= */
 
-/***** Read more button *****/
-
-.read-more-btn {
-  font-size: 0.9em;
-}
-
-/**
-.read-more-btn {
-  background-color: rgb(230, 224, 224); 
-  padding: 8px 25px;
-  border-radius: 7px;
-}
-
-.read-more-btn:hover {
-  background-color: rgb(205, 199, 199);
-  transition-duration: 0.3s;
-} **/
-
-
 
 /* =========================
      LAYOUT (MOBILE FIRST)
@@ -238,16 +219,26 @@ main > :not(.hero) {
   padding: 5vw;
 }**/
 
+.blog-link {
+  border-bottom: none;
+}
+
 .index-blog-preview,
 .blog-preview {
+  color: var(--main-text-color);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: transform 1s ease, box-shadow 0.3s ease;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: white;
   border: var(--separation-line);
   border-radius: 10px;
   padding: 15px;
+}
+
+.index-blog-preview:visited ,
+.blog-preview:visited {
+  color: var(--main-text-color);
 }
 
 .index-blog-preview:active, .blog-preview:active {
@@ -261,18 +252,6 @@ main > :not(.hero) {
   object-fit: cover;
 }
 
-.index-blog-preview a,
-.index-blog-preview a:visited, 
-.blog-preview a,
-.blog-preview a:visited {
-  color: var(--main-text-color);
-}
-
-.index-blog-preview a:first-child,
-.blog-preview a:first-child {
-  border-bottom: none;   /** removes underline on the img **/
-}
-
 .index-bp-article h3,
 .bp-article h3 {
   padding: 5px 0;
@@ -282,6 +261,11 @@ main > :not(.hero) {
 .index-bp-article p,
 .bp-article p {
   margin-bottom: 5px;
+}
+
+.read-more {
+  font-size: 0.9em;
+  border-bottom: 1px dotted var(--main-text-color);
 }
 
 /************ About ************/
@@ -450,6 +434,12 @@ footer {
   color: var(--main-text-color);
 }**/
 
+
+
+
+
+
+
 /* =========================
         MEDIA QUERIES
    Mobile → Tablet → Laptop
@@ -487,8 +477,6 @@ main > :not(.hero) {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
-
-
 
 
 /************ About ************/
@@ -556,6 +544,11 @@ footer {
 }
 
 
+
+
+
+
+
 /*******************************************************
 
       Large devices (laptops/desktops, 992px and up)
@@ -615,10 +608,6 @@ main > :not(.hero) {
    min-width: 300px;
 }
 
-.index-blog-preview,
-.blog-preview {
-  transition: transform 1s ease, box-shadow 0.3s ease;
-}
 
 .index-blog-preview:hover, .blog-preview:hover {
   transform: scale(0.98);
