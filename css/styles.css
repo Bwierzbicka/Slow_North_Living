@@ -203,9 +203,9 @@ main > :not(.hero) {
   margin-top: 30px;
 }
 
-#featured-posts-container, 
-#blog-preview-container,
-#seasonal-care  {
+#featured-posts, 
+#seasonal-posts,
+#blog-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -219,11 +219,6 @@ main > :not(.hero) {
   padding: 5vw;
 }**/
 
-.blog-link {
-  border-bottom: none;
-}
-
-.index-blog-preview,
 .blog-preview {
   color: var(--main-text-color);
   display: flex;
@@ -236,30 +231,27 @@ main > :not(.hero) {
   padding: 15px;
 }
 
-.index-blog-preview:visited ,
 .blog-preview:visited {
   color: var(--main-text-color);
 }
 
-.index-blog-preview:active, .blog-preview:active {
+.blog-preview:active {
   transform: scale(0.98);
   box-shadow:  0 0 10px rgb(4, 4, 4);
 }
 
-.index-bp-img, .bp-img {
+.bp-img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
-.index-bp-article h3,
-.bp-article h3 {
+.bp-description h3 {
   padding: 5px 0;
   border-bottom: var(--separation-line); 
 }
 
-.index-bp-article p,
-.bp-article p {
+.bp-description p {
   margin-bottom: 5px;
 }
 
@@ -273,8 +265,9 @@ main > :not(.hero) {
 .main-about {
   margin-top: 20px;
 }
-/************ Blog Post - articles ************/
 
+
+/************ Blog Post - articles ************/
 
 .article-img {
   margin-top: 20px;
@@ -470,11 +463,16 @@ main > :not(.hero) {
 
 /*****  Home Page ** Blog Page *****/
 
-#featured-posts-container,
-#blog-preview-container,
-#seasonal-care {
+#featured-posts,
+#blog-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#seasonal-posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -589,35 +587,26 @@ main > :not(.hero) {
 
 /*****  Home Page ** Blog Page *****/
 
-#featured-posts-container {
+#featured-posts {
   margin-top: 40px;
   grid-template-columns: repeat(4, 1fr);
 }
 
-#seasonal-care {
+#seasonal-posts {
   margin-top: 40px;
-  grid-template-columns: repeat(3, 1fr);
-  gap:50px;
 }
 
-#blog-preview-container {
+#blog-list {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.seasonal-care .index-bp-img {
-  min-width: 300px;
+.featured-img {
+  height: 250px;
 }
 
-
-.index-blog-preview:hover, .blog-preview:hover {
+.blog-preview:hover {
   transform: scale(0.98);
   box-shadow:  0 0 10px rgb(4, 4, 4);
-}
-
-.index-blog-preview:active, .blog-preview:active {
-  transform: none;
-  box-shadow:  none;
-  padding: 0;
 }
 
 /************ About ************/
