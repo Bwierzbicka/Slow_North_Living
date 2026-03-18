@@ -203,9 +203,9 @@ main > :not(.hero) {
   margin-top: 30px;
 }
 
-.featured-posts-container, 
-.blog-preview-container,
-.seasonal-care  {
+#featured-posts-container, 
+#blog-preview-container,
+#seasonal-care  {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -470,9 +470,9 @@ main > :not(.hero) {
 
 /*****  Home Page ** Blog Page *****/
 
-.featured-posts-container,
-.blog-preview-container,
-.seasonal-care {
+#featured-posts-container,
+#blog-preview-container,
+#seasonal-care {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -589,23 +589,23 @@ main > :not(.hero) {
 
 /*****  Home Page ** Blog Page *****/
 
-.featured-posts-container {
+#featured-posts-container {
   margin-top: 40px;
   grid-template-columns: repeat(4, 1fr);
 }
 
-.seasonal-care {
+#seasonal-care {
   margin-top: 40px;
   grid-template-columns: repeat(3, 1fr);
   gap:50px;
 }
 
-.blog-preview-container {
+#blog-preview-container {
   grid-template-columns: repeat(3, 1fr);
 }
 
 .seasonal-care .index-bp-img {
-   min-width: 300px;
+  min-width: 300px;
 }
 
 
