@@ -4,7 +4,7 @@
 
 :root {
     --page-background-color: #f7f6f3;
-    --page-secondary-background-color: #f7f6f3;
+    --card-background-color: #ffffff;
     --main-text-color: #2f2f2f;
     --link-color: #4d270a;
     --link-visited-color: #513195;
@@ -204,20 +204,21 @@ main > :not(.hero) {
 }
 
 #featured-posts, 
-#seasonal-posts,
 #blog-list {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-/**
-.seasonal-care {
-  background-color: var(--page-secondary-background-color);
-  margin: 0 !important;
-  width: 100vw !important;
-  padding: 5vw;
-}**/
+#seasonal-posts {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 350px;
+  grid-auto-flow: column;  /* Places new items in columns instead of rows */
+  grid-auto-columns: 350px; /* Sets the size for any implicitly created columns */
+  overflow-x: auto; /* Adds a horizontal scrollbar */
+  padding-bottom: 20px;
+}
 
 .blog-preview {
   color: var(--main-text-color);
@@ -225,7 +226,7 @@ main > :not(.hero) {
   flex-direction: column;
   height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  background-color: white;
+  background-color: var(--card-background-color);
   border: var(--separation-line);
   border-radius: 10px;
   padding: 15px;
@@ -471,9 +472,9 @@ main > :not(.hero) {
 }
 
 #seasonal-posts {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 400px;
+  grid-auto-columns: 400px; 
+  gap: 30px;
 }
 
 
@@ -598,10 +599,6 @@ main > :not(.hero) {
 
 #blog-list {
   grid-template-columns: repeat(3, 1fr);
-}
-
-.featured-img {
-  height: 250px;
 }
 
 .blog-preview:hover {
