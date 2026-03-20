@@ -1,12 +1,21 @@
 
 [
+    {
+    "title": "Rustic Balcony Ideas for Small City Spaces",
+    "description": "Discover simple ways to create your own small rustic city balcony — a cozy, budget-friendly outdoor space with natural materials, soft lighting, and easy decor.",
+    "image": "./img/rustic-balcony-ideas/rustic-balcony-corner.webp",
+    "link": "./blog/rustic-balcony-ideas.html",
+    "alt": "A cozy rustic balcony in the evening with warm string lights and lush lavender plants.",
+    "featured": false,
+    "tags": ["summer", "balcony"]
+  },
   {
     "title": "10 Balcony Wall Garden Mistakes - And How to Avoid Them",
     "description": "Common mistakes people make with balcony wall gardens and how to avoid them. Simple tips for healthier plants in small vertical gardens.",
     "image": "./img/balcony-wall-garden-mistakes/pocket-wall-garden-mobile.webp",
     "link": "./blog/balcony-wall-garden-mistakes.html",
     "alt": "City balcony with pocket wall garden hanging on the wall behind small table and a chair.",
-    "featured": true,
+    "featured": false,
     "tags": ["summer", "balcony"]
   },
   {
@@ -87,7 +96,7 @@
     "image": "./img/easy-house-plants/house-plants-fig-cozy-corner-mobile.webp",
     "link": "./blog/10-easy-house-plants-for-beginners.html",
     "alt": "Fiddle leaf fig in a cozy living room corner with natural light.",
-    "featured": false,
+    "featured": true,
     "tags": ["houseplants"]
   }
 ]
