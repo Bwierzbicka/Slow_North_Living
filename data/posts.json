@@ -52,7 +52,7 @@
     "link": "./blog/prepare-houseplants-for-outdoor-summer.html",
     "alt": "Wooden crate of houseplants on a sunny garden table.",
     "featured": false,
-    "tags": ["summer", "houseplants", "balcony"]
+    "tags": ["summer", "houseplants", "balcony", "important"]
   },
   {
     "title": "Houseplants That Love a Summer on the Balcony",
@@ -70,7 +70,7 @@
     "link": "./blog/low-maintenance-houseplants-for-gifting.html",
     "alt": "Large leafy houseplant in a dark ceramic pot with a green ribbon, being gifted from one person to another.",
     "featured": true,
-    "tags": ["houseplants"]   
+    "tags": ["houseplants", "important"]   
   },
   {
     "title": "Best Low-Light Plants for North-Facing Apartments",
@@ -97,6 +97,6 @@
     "link": "./blog/10-easy-house-plants-for-beginners.html",
     "alt": "Fiddle leaf fig in a cozy living room corner with natural light.",
     "featured": true,
-    "tags": ["houseplants"]
+    "tags": ["houseplants", "important"]
   }
 ]
