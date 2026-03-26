@@ -9,7 +9,7 @@
     --link-color: #4d270a;
     --link-visited-color: #513195;
     --link-active-color: rgb(147, 99, 55);
-    --separation-line: 2px solid rgb(230, 224, 224);
+    --my-border: 2px solid rgb(230, 224, 224);
 }
 
 /* =========================
@@ -127,7 +127,7 @@ main > :not(.hero) {
 }
 
 .site-header.separation-line {
-  border-bottom: var(--separation-line);
+  border-bottom: var(--my-border);
 }
 
 .site-title {
@@ -198,7 +198,7 @@ main > :not(.hero) {
 
 .start-content {
   text-align: center;
-  border-bottom: var(--separation-line); 
+  border-bottom: var(--my-border); 
   padding: 20px 0;
   margin-top: 30px;
 }
@@ -210,24 +210,79 @@ main > :not(.hero) {
   gap: 30px;
 }
 
+.carousel-wrapper {
+  position: relative; /* Anchor point for buttons */
+}
+
+#btn-next, #btn-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* Perfectly centers vertically */
+  z-index: 10; /* Ensure buttons are on top */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.35); /* Semi-transparent background */
+  border: none;
+  padding: 20px 10px;
+  cursor: pointer;
+}
+
+#btn-prev {
+  left: 10px;
+}
+
+#btn-next {
+  right: 10px;
+}
+
 #seasonal-posts {
-  display: grid;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
   gap: 20px;
-  grid-template-columns: 350px;
-  grid-auto-flow: column;  /* Places new items in columns instead of rows */
-  grid-auto-columns: 350px; /* Sets the size for any implicitly created columns */
-  overflow-x: auto; /* Adds a horizontal scrollbar */
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+  scrollbar-width: none; /* Firefox */
+}
+
+#seasonal-posts::-webkit-scrollbar /* Chrome, Safari and Opera */ {
+    display: none;
+}
+
+#seasonal-posts .blog-preview {
+  min-width: 100%;
+}
+
+#carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: var(--my-border);
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: rgb(230, 224, 224);
+}
+
+.carousel-dot:hover {
+  transform: scale(1.3);
 }
 
 .blog-preview {
   color: var(--main-text-color);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  flex-grow: 1; /* This makes the card body take up all available vertical space */
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   background-color: var(--card-background-color);
-  border: var(--separation-line);
+  border: var(--my-border);
   border-radius: 10px;
   padding: 15px;
 }
@@ -249,7 +304,7 @@ main > :not(.hero) {
 
 .bp-description h3 {
   padding: 5px 0;
-  border-bottom: var(--separation-line); 
+  border-bottom: var(--my-border); 
 }
 
 .bp-description p {
@@ -314,7 +369,7 @@ article h1 {
 /************* You might also like *************/
 
 .related-posts-section {
-  border-top: var(--separation-line);
+  border-top: var(--my-border);
   margin-top: 30px;
   padding: 30px 0;
 }
@@ -324,7 +379,7 @@ article h1 {
   align-items: center;
   gap: 15px;
   padding: 12px 0;
-  border-bottom: var(--separation-line);
+  border-bottom: var(--my-border);
   text-decoration: none;
   color: var(--main-text-color);
 }
@@ -349,7 +404,7 @@ article h1 {
 
 
 footer {
-  border-top: var(--separation-line); 
+  border-top: var(--my-border); 
   margin-top: 40px;
   padding: 40px 0;
   display: flex;
@@ -386,7 +441,7 @@ footer {
 
 /**
 footer {
-  border-top: var(--separation-line); 
+  border-top: var(--my-border); 
   margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 20px;
@@ -466,12 +521,9 @@ main > :not(.hero) {
   gap: 20px;
 }
 
-#seasonal-posts {
-  grid-template-columns: 400px;
-  grid-auto-columns: 400px; 
-  gap: 30px;
+#seasonal-posts .blog-preview {
+  min-width: calc((100% - 20px) / 2); /* card - gap split between 2 cards */
 }
-
 
 /************ About ************/
 
@@ -494,7 +546,7 @@ main > :not(.hero) {
 .house-plant-description {
   margin-left: 20px;
   padding-left: 20px;
-  border-left: var(--separation-line);
+  border-left: var(--my-border);
 }
 
 .house-plant-description p:first-of-type,
@@ -588,8 +640,12 @@ main > :not(.hero) {
   grid-template-columns: repeat(4, 1fr);
 }
 
-#seasonal-posts {
+.carousel-wrapper {
   margin-top: 40px;
+}
+
+#seasonal-posts .blog-preview {
+  min-width: calc((100% - 40px) / 3); /* width - 2 gaps split between 3 cards */
 }
 
 #blog-list {

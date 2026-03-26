@@ -46,7 +46,7 @@
     });
   });
 
-/**********  SEASONAL CARE **********/
+/**********  SEASONAL CARE - CAROUSEL FOR "SUMMER" **********/
 
   const seasonalContainer = document.getElementById("seasonal-posts");
 
@@ -54,12 +54,101 @@
   .then(res => res.json())
   .then(posts => {
 
-    const seasonal = posts
-      .filter(post => post.tags?.includes("summer"));
-
+    const seasonal = posts.filter(post => post.tags?.includes("summer"));
     seasonal.forEach(post => {
       seasonalContainer.appendChild(createPostCard(post));
     });
+
+    // Carousel functionality
+    const btnNext = document.getElementById("btn-next");
+    const btnPrev = document.getElementById("btn-prev");
+    const indicatorsContainer = document.getElementById("carousel-indicators");
+    
+    let currentIndex = 0;
+    const totalItems = seasonal.length;
+    
+    // Create indicator dots
+    for (let i = 0; i < totalItems; i++) {
+      const dot = document.createElement("div");
+      dot.classList.add("carousel-dot");
+      if (i === 0) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateCarousel();
+      });
+      indicatorsContainer.appendChild(dot);
+    }
+
+    function updateCarousel() {
+      const targetCard = seasonalContainer.children[currentIndex];
+      if (targetCard) {
+        targetCard.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+      updateIndicators();
+    }
+    
+    function updateIndicators() {
+      const dots = indicatorsContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === currentIndex) {
+          dots[i].classList.add("active");
+        } else {
+          dots[i].classList.remove("active");
+        }
+      }
+    }
+    
+    btnNext.addEventListener("click", () => {
+      if (currentIndex < totalItems - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+    
+    btnPrev.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    // Update indicators when user scrolls manually
+    let scrollTimeout;
+    seasonalContainer.addEventListener("scroll", () => {
+      // Debounce the scroll event for better performance
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        updateIndicatorsOnScroll();
+      }, 10);
+    });
+
+    function updateIndicatorsOnScroll() {
+      const container = seasonalContainer;
+      const containerCenter = container.scrollLeft + container.clientWidth / 2;
+      const cards = Array.from(container.children);
+
+    // Find the card whose center is closest to carousel center
+      let closestIndex = currentIndex;
+      let smallestDistance = Number.POSITIVE_INFINITY;
+
+      cards.forEach((card, i) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const distance = Math.abs(cardCenter - containerCenter);
+        if (distance < smallestDistance) {
+          smallestDistance = distance;
+          closestIndex = i;
+        }
+      });
+
+      if (closestIndex !== currentIndex && closestIndex >= 0 && closestIndex < totalItems) {
+        currentIndex = closestIndex;
+        updateIndicators();
+      }
+    }
   });
 
 /*******************************************************
@@ -80,7 +169,7 @@
 
 /*******************************************************
   
-                        BLOG POST - RELATED ARTICLES
+                BLOG POST - RELATED ARTICLES
 
 ********************************************************/ 
 
