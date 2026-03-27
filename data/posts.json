@@ -1,5 +1,14 @@
 
-[
+[ 
+  {
+    "title": "10 Trending Houseplants Everyone Wants (and How to Take Care of Them)",
+    "description": "Discover 10 trending houseplants everyone loves and learn how to care for them. From Monstera to Snake Plant, find simple tips to keep your plants thriving at home.",
+    "image": "./img/trending-houseplants/rubber-tree-wooden-hand.webp",
+    "link": "./blog/trending-houseplants.html",
+    "alt": "Rubber plant and snake plant on white furniture with books and wooden hand decor in a calm, minimalist setting.",
+    "featured": true,
+    "tags": ["houseplants"]
+  },
     {
     "title": "Rustic Balcony Ideas for Small City Spaces",
     "description": "Discover simple ways to create your own small rustic city balcony — a cozy, budget-friendly outdoor space with natural materials, soft lighting, and easy decor.",
@@ -24,7 +33,7 @@
     "image": "./img/vertical-garden/wood-crates-wall-garden-mobile.webp",
     "link": "./blog/wall-garden-ideas.html",
     "alt": "City balcony with a chair and cushion in front of a vertical garden made from wooden crates mounted on a brick wall holding multiple potted plants.",
-    "featured": true,
+    "featured": false,
     "tags": ["summer", "balcony"]
   },
   {
@@ -93,7 +102,7 @@
   {
     "title": "10 Easy Houseplants That Practically Grow Themselves",
     "description": "Beginner-friendly plants that survive low light, winter dryness, and busy schedules.",
-    "image": "./img/easy-house-plants/house-plants-fig-cozy-corner-mobile.webp",
+    "image": "./img/house-plants/house-plants-fig-cozy-corner-mobile.webp",
     "link": "./blog/10-easy-house-plants-for-beginners.html",
     "alt": "Fiddle leaf fig in a cozy living room corner with natural light.",
     "featured": true,

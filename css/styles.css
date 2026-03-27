@@ -549,7 +549,6 @@ main > :not(.hero) {
   border-left: var(--my-border);
 }
 
-.house-plant-description p:first-of-type,
 .house-plant-description > :last-child,
 .article-intro > :last-child  {
   margin: 0;
