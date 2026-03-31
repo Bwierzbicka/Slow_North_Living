@@ -1,5 +1,14 @@
 
 [ 
+    {
+    "title": "All You Need to Know About Monstera",
+    "description": "Learn about 3 popular types — Deliciosa, Adansonii, and Albo — plus simple care tips to grow healthy plants with bigger leaves in real home conditions. Perfect beginner - friendly Monstera care guide.",
+    "image": "./img/all-to-know-about-monstera/monstera-front-img.webp",
+    "link": "./blog/all-to-know-about-monstera.html",
+    "alt": "Big Monstera Albo Variegata in a bright, sunlit room.",
+    "featured": true,
+    "tags": ["houseplants"]
+  },
   {
     "title": "10 Trending Houseplants Everyone Wants (and How to Take Care of Them)",
     "description": "Discover 10 trending houseplants everyone loves and learn how to care for them. From Monstera to Snake Plant, find simple tips to keep your plants thriving at home.",
@@ -9,7 +18,7 @@
     "featured": true,
     "tags": ["houseplants"]
   },
-    {
+  {
     "title": "Rustic Balcony Ideas for Small City Spaces",
     "description": "Discover simple ways to create your own small rustic city balcony — a cozy, budget-friendly outdoor space with natural materials, soft lighting, and easy decor.",
     "image": "./img/rustic-balcony-ideas/rustic-balcony-corner.webp",
@@ -69,7 +78,7 @@
     "image": "./img/plants-for-balconies/blue-balconies-mobile.webp",
     "link": "./blog/houseplants-that-love-summer-on-the-balcony.html",
     "alt": "Beige apartment building with blue window frames and balconies filled with green plants.",
-    "featured": true,
+    "featured": false,
     "tags": ["summer", "houseplants", "balcony"]    
   },
   {

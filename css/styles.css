@@ -316,6 +316,41 @@ main > :not(.hero) {
   border-bottom: 1px dotted var(--main-text-color);
 }
 
+/* Pagination Controls */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.pagination-btn {
+  background-color: var(--card-background-color);
+  border: var(--my-border);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: var(--main-text-color);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: var(--page-background-color);
+  transform: scale(1.05);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.page-info {
+  font-size: 0.8rem;
+}
+
 /************ About ************/
 
 .main-about {
@@ -353,6 +388,13 @@ article h1 {
   margin-bottom: 20px;
 }
 
+.small-article-body-img {
+  width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+  margin-inline: auto;
+}
+
 .article-body-img {
   width: 100%;
   height: 300px;
@@ -363,6 +405,21 @@ article h1 {
 
 .article-body-img.full-img {
   height: auto;
+}
+
+.plant-table {
+  text-align: left;
+  border: var(--my-border);
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  font-size: 0.8em;
+  margin: 20px auto;
+}
+
+.plant-table th,
+.plant-table td {
+  padding: 10px;
 }
 
 
@@ -478,12 +535,6 @@ footer {
   color: var(--main-text-color);
 }**/
 
-
-
-
-
-
-
 /* =========================
         MEDIA QUERIES
    Mobile → Tablet → Laptop
@@ -554,8 +605,19 @@ main > :not(.hero) {
   margin: 0;
 }
 
+.small-article-body-img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 0;
+}
 .article-body-img {
   height: auto;
+}
+
+.plant-table {
+  width: 100%;
+  padding: 20px;
+  font-size: 1em;
 }
 
 /************* You might also like *************/

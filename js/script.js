@@ -158,14 +158,62 @@
 ********************************************************/ 
 
   const blogList = document.getElementById("blog-list");
+  const prevPageBtn = document.getElementById("prev-page");
+  const nextPageBtn = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
 
-  fetch("./data/posts.json")
-    .then(response => response.json())
-    .then(posts => {
-      posts.forEach(post => {
+  if (blogList && prevPageBtn && nextPageBtn && pageInfo) {
+    let currentPage = 1;
+    const postsPerPage = 12;
+    let allPosts = [];
+
+    fetch("./data/posts.json")
+      .then(response => response.json())
+      .then(posts => {
+        allPosts = posts;
+        displayPosts(currentPage);
+        updatePaginationControls();
+      });
+
+    function displayPosts(page) {
+      blogList.innerHTML = ""; // Clear current posts
+      const startIndex = (page - 1) * postsPerPage;
+      const endIndex = startIndex + postsPerPage;
+      const postsToShow = allPosts.slice(startIndex, endIndex);
+
+      postsToShow.forEach(post => {
         blogList.appendChild(createPostCard(post));
       });
+    }
+
+    function updatePaginationControls() {
+      const totalPages = Math.ceil(allPosts.length / postsPerPage);
+      
+      // Update page info
+      pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+      
+      // Enable/disable buttons
+      prevPageBtn.disabled = currentPage === 1;
+      nextPageBtn.disabled = currentPage === totalPages;
+    }
+
+    prevPageBtn.addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage--;
+        displayPosts(currentPage);
+        updatePaginationControls();
+      }
     });
+
+    nextPageBtn.addEventListener("click", () => {
+      const totalPages = Math.ceil(allPosts.length / postsPerPage);
+      if (currentPage < totalPages) {
+        currentPage++;
+        displayPosts(currentPage);
+        updatePaginationControls();
+      }
+    });
+  }
 
 /*******************************************************
   
