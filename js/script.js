@@ -151,6 +151,23 @@
     }
   });
 
+/**********  PRIVACY BANNER **********/
+
+ const banner = document.getElementById('privacy-banner');
+ const btn = document.getElementById('accept-btn');
+
+ if (banner && btn) {
+    // Check if user already accepted
+    if (!localStorage.getItem('privacyAccepted')) {
+      banner.style.display = 'flex';
+    }
+
+    btn.addEventListener('click', () => {
+      localStorage.setItem('privacyAccepted', 'true');
+      banner.style.display = 'none';
+    });
+ }
+
 /*******************************************************
   
                         BLOG PAGE

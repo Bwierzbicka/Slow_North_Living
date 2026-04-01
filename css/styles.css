@@ -109,6 +109,21 @@ ul, ol {
         COMPONENTS
    ========================= */
 
+.my-btn {
+  background-color: var(--card-background-color);
+  border: var(--my-border);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: var(--main-text-color);
+}
+
+.my-btn:hover {
+  background-color: var(--page-background-color);
+  transform: scale(1.05);
+}
+
 
 /* =========================
      LAYOUT (MOBILE FIRST)
@@ -326,16 +341,6 @@ main > :not(.hero) {
   margin-bottom: 20px;
 }
 
-.pagination-btn {
-  background-color: var(--card-background-color);
-  border: var(--my-border);
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  color: var(--main-text-color);
-}
-
 .pagination-btn:hover:not(:disabled) {
   background-color: var(--page-background-color);
   transform: scale(1.05);
@@ -461,79 +466,87 @@ article h1 {
 
 
 footer {
-  border-top: var(--my-border); 
+  border-top: var(--my-border);
   margin-top: 40px;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.footer-icons {
-  margin-bottom: 30px;
-  display: flex;
-  gap: 20px;
+.nav-footer {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;;
+  margin-bottom: 40px;
+  background-color: var(--card-background-color);
+  border-bottom: var(--my-border);
 }
 
 .nav-footer ul {
   list-style: none; 
   padding: 0;
-  margin-bottom: 30px;
 }
 
 .nav-footer li{
   display: inline;
-  text-align: center;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 .nav-footer a {
   color: var(--main-text-color);
 }
 
-.footer-text {
-  text-align: center;
+.nav-footer > a:hover{
+  border-bottom: 1px dotted var(--main-text-color);
+  color: var(--link-active-color);
+  cursor: pointer;
 }
 
-
-/**
-footer {
-  border-top: var(--my-border); 
-  margin-top: 40px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.nav-footer ul {
-  list-style: none; 
-  padding: 0;
-  margin-bottom: 40px;
-}
-
-.nav-footer li{
-  display: inline;
-  text-align: center;
-  padding: 0 40px;
+.icon {
+  padding: 0 20px;
+  border-bottom: none;
 }
 
 .footer-text {
   text-align: center;
-  margin-bottom: 40px;
 }
 
-.footer-legal {
-  width: max(300px, 10vw);
-  display: flex;
-  justify-content: space-evenly;
+/************ Privacy Banner ************/
+
+#privacy-banner {
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ width: 100%;
+ background: rgba(255, 255, 255, 0.95);
+ border-top: var(--my-border);
+ padding: 20px 20px;
+ font-size: 0.85rem;
+ z-index: 9999;
 }
 
-.nav-footer a:any-link,
-.footer-legal a:any-link {
-  color: var(--main-text-color);
-}**/
+#privacy-banner a {
+  text-decoration: none;
+  border-bottom: 1px dotted var(--main-text-color);
+  color: var(--link-color);
+}
+
+#privacy-banner a:active {
+  color: var(--link-active-color);
+}
+
+#privacy-banner a:visited {
+  color: var(--link-visited-color);
+}
+
+.privacy-btn {
+  min-width: 80px;
+  font-size: 0.85rem;
+  float: right;
+  padding: 10px;
+  background-color: var(--page-background-color);
+}
+
+.privacy-btn:hover {
+  background-color: var(--card-background-color);
+}
 
 /* =========================
         MEDIA QUERIES
@@ -624,34 +637,33 @@ main > :not(.hero) {
 
 /************ Footer ************/
 
-footer {
-  flex-direction: row;
+.nav-footer {
+  display: flex;
   justify-content: space-evenly;
 }
 
-.footer-text {
-  margin-bottom: 0;
-  margin-inline: 2rem;
-}
-
-.nav-footer {
-  margin-bottom: 0;
+.nav-footer li{
+  padding: 0 20px;
 }
 
 
-/**
-.footer-container {
-  width: max(700px, 70vw);
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
-}**/
+/************ Privacy Banner ************/
 
+#privacy-banner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
+#privacy-banner p {
+  margin: 0;
+}
 
+.privacy-btn {
+  margin-left: 20px;
+}
 
+}
 
 
 
