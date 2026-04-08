@@ -231,6 +231,35 @@
       }
     });
   }
+/*******************************************************
+  
+                BLOG POST - AFFILIATE PRODUCTS
+
+********************************************************/ 
+
+const accButtons = document.querySelectorAll(".accordion-button");
+
+accButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    const content = button.nextElementSibling;
+    const isOpen = content.classList.contains("open");
+
+    document.querySelectorAll(".accordion-button").forEach(btn => {
+      btn.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+    document.querySelectorAll(".accordion-content").forEach(c => c.classList.remove("open"));
+
+    if (!isOpen) {
+      button.classList.add("open");
+      button.setAttribute("aria-expanded", "true");
+      content.classList.add("open");
+    }
+  });
+});
+
+
+
 
 /*******************************************************
   

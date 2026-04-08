@@ -138,7 +138,7 @@ main > :not(.hero) {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Vertically centers items */
+  align-items: center; 
 }
 
 .site-header.separation-line {
@@ -166,7 +166,7 @@ main > :not(.hero) {
 }
 
 .nav-head li{
-  display: inline; /* Puts nav items side-by-side */
+  display: inline;
   text-align: center;
   font-size: 1.2rem;
   padding-inline: 30px;
@@ -177,7 +177,7 @@ main > :not(.hero) {
 }
 
 .hero {
-  height: 400px; /* Define a height for the container */
+  height: 400px;
   overflow: hidden;
   position: relative;
 }
@@ -381,6 +381,10 @@ article h1 {
   font-style: italic;
 }
 
+.affiliate-disclosure {
+  font-size: 0.85em;
+}
+
 .house-plant-box {
   display: flex;
   flex-direction: column;
@@ -412,7 +416,7 @@ article h1 {
   height: auto;
 }
 
-.plant-table {
+.article-table {
   text-align: left;
   border: var(--my-border);
   border-radius: 5px;
@@ -422,11 +426,83 @@ article h1 {
   margin: 20px auto;
 }
 
-.plant-table th,
-.plant-table td {
+.article-table th,
+.article-table td {
   padding: 10px;
 }
 
+#affiliate-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.accordion-item {
+  border: var(--my-border);
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: var(--card-background-color);
+}
+
+.accordion-button {
+  width: 100%;
+  background-color: transparent;
+  font-size: 16px;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main-text-color);
+}
+
+.accordion-button::after {
+  content: "▸";
+  transform: rotate(90deg);
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.55);
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.accordion-button.open::after {
+  transform: rotate(-90deg);
+}
+
+.accordion-button:hover {
+  background-color: #f5f2ed;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+  opacity: 0;
+  padding: 0 15px;
+  background-color: var(--card-background-color);
+}
+
+.accordion-content.open {
+  max-height: 800px;
+  opacity: 1;
+  padding-bottom: 15px;
+}
+
+.accordion-content a {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  color: var(--link-color);
+}
+
+.accordion-content p {
+  margin: 0;
+}
 
 /************* You might also like *************/
 
@@ -467,7 +543,7 @@ article h1 {
 
 footer {
   border-top: var(--my-border);
-  margin-top: 40px;
+  margin-top: 80px;
 }
 
 .nav-footer {
