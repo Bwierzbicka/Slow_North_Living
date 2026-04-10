@@ -124,7 +124,6 @@ ul, ol {
   transform: scale(1.05);
 }
 
-
 /* =========================
      LAYOUT (MOBILE FIRST)
    ========================= */
@@ -475,7 +474,7 @@ article h1 {
 }
 
 .accordion-button:hover {
-  background-color: #f5f2ed;
+  background-color: var(--page-background-color);
 }
 
 .accordion-content {
@@ -490,18 +489,24 @@ article h1 {
 .accordion-content.open {
   max-height: 800px;
   opacity: 1;
-  padding-bottom: 15px;
+  padding: 15px;
 }
 
-.accordion-content a {
-  display: block;
-  margin: 18px 0 8px;
-  font-weight: 600;
-  color: var(--link-color);
+.product-button {
+  background-color: var(--page-background-color);
+  border: var(--my-border);
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: var(--main-text-color);
+  font-size: 14px;
+  margin: 20px 0;
 }
 
-.accordion-content p {
-  margin: 0;
+.product-button:hover {
+  background-color: var(--card-background-color);
+  transform: scale(1.05);
 }
 
 /************* You might also like *************/
