@@ -110,18 +110,39 @@ ul, ol {
    ========================= */
 
 .my-btn {
-  background-color: var(--card-background-color);
   border: var(--my-border);
   border-radius: 5px;
-  padding: 5px 10px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
   color: var(--main-text-color);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.my-btn:hover {
+.small-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.big-btn {
+  padding: 15px;
+  font-size: 16px;
+}
+
+.dark-btn {
   background-color: var(--page-background-color);
-  transform: scale(1.05);
+}
+
+.dark-btn:hover {
+  background-color: var(--card-background-color);
+  transform: scale(1.01);
+}
+
+.light-btn {
+  background-color: var(--card-background-color);
+}
+
+.light-btn:hover {
+  background-color: var(--page-background-color);
+  transform: scale(1.01);
 }
 
 /* =========================
@@ -133,14 +154,14 @@ main > :not(.hero) {
   margin-inline: auto;
 }
 
-.site-header {
+#header {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center; 
 }
 
-.site-header.separation-line {
+#header.separation-line {
   border-bottom: var(--my-border);
 }
 
@@ -180,15 +201,6 @@ main > :not(.hero) {
   overflow: hidden;
   position: relative;
 }
-
- /* DARK OVERLAY (READABILITY): This creates a transparent layer between image and text. 
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25); 
-}*/
 
 .hero-img {
   width: 100%;   /* Image takes the full width of the container */
@@ -252,6 +264,7 @@ main > :not(.hero) {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 20px;
   padding-bottom: 10px;
   scrollbar-width: none; /* Firefox */
@@ -290,6 +303,7 @@ main > :not(.hero) {
 }
 
 .blog-preview {
+  scroll-snap-align: center;
   color: var(--main-text-color);
   display: flex;
   flex-direction: column;
@@ -340,11 +354,6 @@ main > :not(.hero) {
   margin-bottom: 20px;
 }
 
-.pagination-btn:hover:not(:disabled) {
-  background-color: var(--page-background-color);
-  transform: scale(1.05);
-}
-
 .pagination-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -360,7 +369,6 @@ main > :not(.hero) {
 .main-about {
   margin-top: 20px;
 }
-
 
 /************ Blog Post - articles ************/
 
@@ -441,40 +449,25 @@ article h1 {
   border: var(--my-border);
   border-radius: 5px;
   overflow: hidden;
-  background-color: var(--card-background-color);
 }
 
 .accordion-button {
   width: 100%;
-  background-color: transparent;
-  font-size: 16px;
-  text-align: left;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-  padding: 15px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--main-text-color);
 }
 
 .accordion-button::after {
   content: "▸";
-  transform: rotate(90deg);
-  font-size: 1rem;
-  color: rgba(0, 0, 0, 0.55);
   transition: transform 0.2s ease;
   flex-shrink: 0;
 }
 
 .accordion-button.open::after {
-  transform: rotate(-90deg);
-}
-
-.accordion-button:hover {
-  background-color: var(--page-background-color);
+  transform: rotate(90deg);
 }
 
 .accordion-content {
@@ -482,7 +475,6 @@ article h1 {
   overflow: hidden;
   transition: max-height 0.25s ease, opacity 0.25s ease;
   opacity: 0;
-  padding: 0 15px;
   background-color: var(--card-background-color);
 }
 
@@ -490,23 +482,6 @@ article h1 {
   max-height: 800px;
   opacity: 1;
   padding: 15px;
-}
-
-.product-button {
-  background-color: var(--page-background-color);
-  border: var(--my-border);
-  border-radius: 5px;
-  padding: 5px 10px;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  color: var(--main-text-color);
-  font-size: 14px;
-  margin: 20px 0;
-}
-
-.product-button:hover {
-  background-color: var(--card-background-color);
-  transform: scale(1.05);
 }
 
 /************* You might also like *************/
@@ -546,7 +521,7 @@ article h1 {
 /************ Footer ************/
 
 
-footer {
+#footer {
   border-top: var(--my-border);
   margin-top: 80px;
 }
@@ -619,15 +594,9 @@ footer {
 
 .privacy-btn {
   min-width: 80px;
-  font-size: 0.85rem;
   float: right;
-  padding: 10px;
-  background-color: var(--page-background-color);
 }
 
-.privacy-btn:hover {
-  background-color: var(--card-background-color);
-}
 
 /* =========================
         MEDIA QUERIES
@@ -642,7 +611,7 @@ main > :not(.hero) {
   margin-inline: auto;
 } 
 
-.site-header {
+#header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center; /* Vertically centers items */
@@ -727,7 +696,6 @@ main > :not(.hero) {
   padding: 0 20px;
 }
 
-
 /************ Privacy Banner ************/
 
 #privacy-banner {
@@ -747,11 +715,9 @@ main > :not(.hero) {
 }
 
 
-
-
 /*******************************************************
 
-      Large devices (laptops/desktops, 992px and up)
+      LARGE DEVICES (laptops/desktops, 992px and up)
 
 *********************************************************/
 
@@ -817,6 +783,7 @@ main > :not(.hero) {
   max-width: 900px;
   text-align: justify;
 }
+
 /************ Blog Post - articles ************/
 
 main > article {
@@ -828,12 +795,8 @@ main > article {
   max-width: 300px;
 }
 
-
 /************* You might also like *************/
 
 /************ Footer ************/
-
-
-
 
 }
