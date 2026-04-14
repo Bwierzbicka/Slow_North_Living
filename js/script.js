@@ -153,42 +153,20 @@
 
 /**********  PRIVACY BANNER **********/
 
-const banner = document.getElementById('privacy-banner');
-const btn = document.getElementById('accept-btn');
+ const banner = document.getElementById('privacy-banner');
+ const btn = document.getElementById('accept-btn');
 
-function setPrivacyAccepted() {
-  try {
-    localStorage.setItem('privacyAccepted', 'true');
-  } catch (e) {
-    // localStorage may be unavailable in some environments
-  }
-
-  const maxAge = 60 * 60 * 24 * 365; // 1 year
-  document.cookie = `privacyAccepted=true; max-age=${maxAge}; path=/`;
-}
-
-function isPrivacyAccepted() {
-  try {
-    if (localStorage.getItem('privacyAccepted') === 'true') {
-      return true;
+ if (banner && btn) {
+    // Check if user already accepted
+    if (!localStorage.getItem('privacyAccepted')) {
+      banner.style.display = 'flex';
     }
-  } catch (e) {
-    // ignore localStorage errors
-  }
 
-  return document.cookie.split('; ').some(cookie => cookie.startsWith('privacyAccepted=true'));
-}
-
-if (banner && btn) {
-  if (!isPrivacyAccepted()) {
-    banner.style.display = 'flex';
-  }
-
-  btn.addEventListener('click', () => {
-    setPrivacyAccepted();
-    banner.style.display = 'none';
-  });
-}
+    btn.addEventListener('click', () => {
+      localStorage.setItem('privacyAccepted', 'true');
+      banner.style.display = 'none';
+    });
+ }
 
 /*******************************************************
   

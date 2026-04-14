@@ -1,6 +1,15 @@
 
 [ 
-    {
+  {
+    "title": "Houseplants for Complete Beginners: What You Actually Need to Start",
+    "description": "Starting with your first houseplants? This simple beginner guide covers exactly what you need and easy tips to avoid common mistakes. Perfect for first-time plant parents.",
+    "image": "./img/houseplants-for-complete-beginners/houseplants-orange-background.webp",
+    "link": "./blog/houseplants-for-complete-beginners.html",
+    "alt": "A group of thriving houseplants on a bright orange background.",
+    "featured": true,
+    "tags": ["houseplants"]
+  },
+  {
     "title": "All You Need to Know About Monstera",
     "description": "Learn about 3 popular types — Deliciosa, Adansonii, and Albo — plus simple care tips to grow healthy plants with bigger leaves in real home conditions. Perfect beginner - friendly Monstera care guide.",
     "image": "./img/all-to-know-about-monstera/monstera-front-img.webp",
