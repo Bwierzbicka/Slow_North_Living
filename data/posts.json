@@ -3,8 +3,8 @@
   {
     "title": "Houseplants for Complete Beginners: What You Actually Need to Start",
     "description": "Starting with your first houseplants? This simple beginner guide covers exactly what you need and easy tips to avoid common mistakes. Perfect for first-time plant parents.",
-    "image": "./img/houseplants-for-complete-beginners/houseplants-orange-background.webp",
-    "link": "./blog/houseplants-for-complete-beginners.html",
+    "image": "/img/houseplants-for-complete-beginners/houseplants-orange-background.webp",
+    "link": "/blog/houseplants-for-complete-beginners.html",
     "alt": "A group of thriving houseplants on a bright orange background.",
     "featured": true,
     "tags": ["houseplants"]
@@ -12,8 +12,8 @@
   {
     "title": "All You Need to Know About Monstera",
     "description": "Learn about 3 popular types — Deliciosa, Adansonii, and Albo — plus simple care tips to grow healthy plants with bigger leaves in real home conditions. Perfect beginner - friendly Monstera care guide.",
-    "image": "./img/all-to-know-about-monstera/monstera-front-img.webp",
-    "link": "./blog/all-to-know-about-monstera.html",
+    "image": "/img/all-to-know-about-monstera/monstera-front-img.webp",
+    "link": "/blog/all-to-know-about-monstera.html",
     "alt": "Big Monstera Albo Variegata in a bright, sunlit room.",
     "featured": true,
     "tags": ["houseplants"]
@@ -21,8 +21,8 @@
   {
     "title": "10 Trending Houseplants Everyone Wants (and How to Take Care of Them)",
     "description": "Discover 10 trending houseplants everyone loves and learn how to care for them. From Monstera to Snake Plant, find simple tips to keep your plants thriving at home.",
-    "image": "./img/trending-houseplants/rubber-tree-wooden-hand.webp",
-    "link": "./blog/trending-houseplants.html",
+    "image": "/img/trending-houseplants/rubber-tree-wooden-hand.webp",
+    "link": "/blog/trending-houseplants.html",
     "alt": "Rubber plant and snake plant on white furniture with books and wooden hand decor in a calm, minimalist setting.",
     "featured": true,
     "tags": ["houseplants"]
@@ -30,8 +30,8 @@
   {
     "title": "Rustic Balcony Ideas for Small City Spaces",
     "description": "Discover simple ways to create your own small rustic city balcony — a cozy, budget-friendly outdoor space with natural materials, soft lighting, and easy decor.",
-    "image": "./img/rustic-balcony-ideas/rustic-balcony-corner.webp",
-    "link": "./blog/rustic-balcony-ideas.html",
+    "image": "/img/rustic-balcony-ideas/rustic-balcony-corner.webp",
+    "link": "/blog/rustic-balcony-ideas.html",
     "alt": "A cozy rustic balcony in the evening with warm string lights and lush lavender plants.",
     "featured": false,
     "tags": ["summer", "balcony"]
@@ -39,8 +39,8 @@
   {
     "title": "10 Balcony Wall Garden Mistakes - And How to Avoid Them",
     "description": "Common mistakes people make with balcony wall gardens and how to avoid them. Simple tips for healthier plants in small vertical gardens.",
-    "image": "./img/balcony-wall-garden-mistakes/pocket-wall-garden-mobile.webp",
-    "link": "./blog/balcony-wall-garden-mistakes.html",
+    "image": "/img/balcony-wall-garden-mistakes/pocket-wall-garden-mobile.webp",
+    "link": "/blog/balcony-wall-garden-mistakes.html",
     "alt": "City balcony with pocket wall garden hanging on the wall behind small table and a chair.",
     "featured": false,
     "tags": ["summer", "balcony"]
@@ -48,8 +48,8 @@
   {
     "title": "Simple Wall Garden Ideas for Small Balconies",
     "description": "Vertical gardening guide with simple ideas for small balconies and patios. Learn how to grow herbs and plants vertically to save space and create a lush balcony garden.",
-    "image": "./img/vertical-garden/wood-crates-wall-garden-mobile.webp",
-    "link": "./blog/wall-garden-ideas.html",
+    "image": "/img/vertical-garden/wood-crates-wall-garden-mobile.webp",
+    "link": "/blog/wall-garden-ideas.html",
     "alt": "City balcony with a chair and cushion in front of a vertical garden made from wooden crates mounted on a brick wall holding multiple potted plants.",
     "featured": false,
     "tags": ["summer", "balcony"]
@@ -57,8 +57,8 @@
   {
     "title": "Container Gardening Ideas for Small Balconies and Patios",
     "description": "Learn how to grow herbs, flowers, and plants in pots to create a calm, flexible garden in any city home.",
-    "image": "./img/container-garden-ideas/veggie-container-garden-mobile.webp",
-    "link": "./blog/container-garden-ideas.html",
+    "image": "/img/container-garden-ideas/veggie-container-garden-mobile.webp",
+    "link": "/blog/container-garden-ideas.html",
     "alt": "Balcony container garden with vegetable plants growing in pots, as a hand holds a stainless steel watering can and waters the plants.",
     "featured": false,
     "tags": ["summer", "balcony"]
@@ -66,8 +66,8 @@
   {
     "title": "Plants That Can Handle a Windy Balcony",
     "description": "Windy balcony? Discover houseplants, herbs, and tips to help your plants thrive in breezy conditions — and transition smoothly back indoors after summer.",
-    "image": "./img/plants-for-windy-balcony/small-balcony-filled-with-plants-mobile.webp",
-    "link": "./blog/plants-for-windy-balcony.html",
+    "image": "/img/plants-for-windy-balcony/small-balcony-filled-with-plants-mobile.webp",
+    "link": "/blog/plants-for-windy-balcony.html",
     "alt": "City balcony garden filled with many potted houseplants in natural light.",
     "featured": false,
     "tags": ["summer", "balcony"]
@@ -75,8 +75,8 @@
   {
     "title": "How to Prepare Your Houseplants for Outdoor Summer",
     "description": "Learn how to prepare your houseplants for summer outdoors with gentle transitions, proper watering, and sun-safe placement.",
-    "image": "./img/prepare-houseplants-for-outdoor-summer/crate-of-houseplants-mobile.webp",
-    "link": "./blog/prepare-houseplants-for-outdoor-summer.html",
+    "image": "/img/prepare-houseplants-for-outdoor-summer/crate-of-houseplants-mobile.webp",
+    "link": "/blog/prepare-houseplants-for-outdoor-summer.html",
     "alt": "Wooden crate of houseplants on a sunny garden table.",
     "featured": false,
     "tags": ["summer", "houseplants", "balcony", "important"]
@@ -84,8 +84,8 @@
   {
     "title": "Houseplants That Love a Summer on the Balcony",
     "description": "Find the best houseplants for balconies and patios. These indoor plants love summer outdoors and transition back inside without stress.",
-    "image": "./img/plants-for-balconies/blue-balconies-mobile.webp",
-    "link": "./blog/houseplants-that-love-summer-on-the-balcony.html",
+    "image": "/img/plants-for-balconies/blue-balconies-mobile.webp",
+    "link": "/blog/houseplants-that-love-summer-on-the-balcony.html",
     "alt": "Beige apartment building with blue window frames and balconies filled with green plants.",
     "featured": false,
     "tags": ["summer", "houseplants", "balcony"]    
@@ -93,8 +93,8 @@
   {
     "title": "Low-Maintenance Houseplants That Make Thoughtful Gifts",
     "description": "Looking for a thoughtful plant gift? These low-maintenance houseplants adapt well to apartments and make long-lasting gifts for any occasion.",
-    "image": "./img/plants-for-gifting/plant-for-gifting-mobile.webp",
-    "link": "./blog/low-maintenance-houseplants-for-gifting.html",
+    "image": "/img/plants-for-gifting/plant-for-gifting-mobile.webp",
+    "link": "/blog/low-maintenance-houseplants-for-gifting.html",
     "alt": "Large leafy houseplant in a dark ceramic pot with a green ribbon, being gifted from one person to another.",
     "featured": true,
     "tags": ["houseplants", "important"]   
@@ -102,8 +102,8 @@
   {
     "title": "Best Low-Light Plants for North-Facing Apartments",
     "description": "A simple guide to choosing easy houseplants that adapt well to north-facing apartments and lower light.",
-    "image": "./img/north-facing-appartments/houseplants-on-the-windowsill-mobile.webp",
-    "link": "./blog/best-low-light-plants-north-facing-apartments.html",
+    "image": "/img/north-facing-appartments/houseplants-on-the-windowsill-mobile.webp",
+    "link": "/blog/best-low-light-plants-north-facing-apartments.html",
     "alt": "Five houseplants in north facing window in ceramic pots.",
     "featured": false,
     "tags": ["houseplants"]   
@@ -111,8 +111,8 @@
   {
     "title": "How Often Should You Water Houseplants in Winter?",
     "description": "Winter plant care for shorter days, weak sunlight, and dry indoor air.",
-    "image": "./img/winter-watering/watering-monstera-mobile.webp",
-    "link": "./blog/how-often-to-water-houseplants-in-winter.html",
+    "image": "/img/winter-watering/watering-monstera-mobile.webp",
+    "link": "/blog/how-often-to-water-houseplants-in-winter.html",
     "alt": "Large-leafed Monstera in a bright window light with a shiny metal watering can.",
     "featured": false,
     "tags": ["winter", "houseplants"]
@@ -120,8 +120,8 @@
   {
     "title": "10 Easy Houseplants That Practically Grow Themselves",
     "description": "Beginner-friendly plants that survive low light, winter dryness, and busy schedules.",
-    "image": "./img/house-plants/house-plants-fig-cozy-corner-mobile.webp",
-    "link": "./blog/10-easy-house-plants-for-beginners.html",
+    "image": "/img/house-plants/house-plants-fig-cozy-corner-mobile.webp",
+    "link": "/blog/10-easy-house-plants-for-beginners.html",
     "alt": "Fiddle leaf fig in a cozy living room corner with natural light.",
     "featured": true,
     "tags": ["houseplants", "important"]

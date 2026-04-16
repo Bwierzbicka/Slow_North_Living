@@ -33,7 +33,7 @@
 
   const featuredContainer = document.getElementById("featured-posts");
 
-  fetch("./data/posts.json")
+  fetch("/data/posts.json")
   .then(res => res.json())
   .then(posts => {
 
@@ -50,7 +50,7 @@
 
   const seasonalContainer = document.getElementById("seasonal-posts");
 
-  fetch("./data/posts.json")
+  fetch("/data/posts.json")
   .then(res => res.json())
   .then(posts => {
 
@@ -184,7 +184,7 @@
     const postsPerPage = 12;
     let allPosts = [];
 
-    fetch("./data/posts.json")
+    fetch("/data/posts.json")
       .then(response => response.json())
       .then(posts => {
         allPosts = posts;
@@ -269,15 +269,17 @@ accButtons.forEach(button => {
 
   const relatedArticles = document.getElementById("related-posts");
 
-  fetch("../data/posts.json")
+  fetch("/data/posts.json")
     .then(response => response.json())
     .then(posts => {
     
-      // Find current post
       const currentPath = window.location.pathname;
-      const currentPost = posts.find(post => {
-        return currentPath.includes(post.link.replace("./", ""));
-      })
+
+      // find current post
+      const currentPost = posts.find(post => currentPath === post.link);
+
+      // Safety check (prevents your error)
+      if (!currentPost) return;
 
       // Find related posts 
       const relatedPosts = posts.filter(post => {
@@ -287,20 +289,22 @@ accButtons.forEach(button => {
         // check tag match
         //.some() is an array method that checks if at least one element passes a test
         //array.some(element => condition) - returns true/false
-          return post.tags.some(tag => currentPost.tags.includes(tag));
+           return post.tags && currentPost.tags &&
+        post.tags.some(tag => currentPost.tags.includes(tag));
       });
 
       relatedPosts.slice(0, 4).forEach(post => {
           const relatedPost = document.createElement("a");
           relatedPost.classList.add("rp-link");
-          relatedPost.href = "."+ post.link;
+          relatedPost.href = post.link;
           relatedPost.innerHTML = `
-                <img src=".${post.image}" alt="${post.alt}">
+                <img src="${post.image}" alt="${post.alt}">
                 <span>${post.title}</span>
             `;
 
-      relatedArticles.appendChild(relatedPost);
-      });
+          relatedArticles.appendChild(relatedPost);
+        });
 
     })
+    .catch(error => console.error("Error loading posts:", error));
           
